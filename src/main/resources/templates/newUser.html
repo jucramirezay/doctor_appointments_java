@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>th:text="${message}"</h1>
+
+    <form action="/newUser" method="POST">
+        <div>
+            <label for="firstNameInput"><h5>First Name</h5></label>
+            <input type="text" placeholder="Write your first name" name="firstName" id="firstNameInput" required>
+        </div>
+        <div>
+            <label for="lastNameInput"><h5>Last Name</h5></label>
+            <input type="text" placeholder="Write your last name" name="lastName" id="lastNameInput" required>
+        </div>
+        <div>
+            <label for="idNumberInput"><h5>Identification Number</h5></label>
+            <input type="number" placeholder="Write your id number" name="idNumber" id="idNumberInput" required>
+        </div>
+        <div>
+            <label for="ageInput"><h5>Age</h5></label>
+            <input type="number" placeholder="Write your age" name="age" id="ageInput" required>
+        </div>
+        <div>
+            <label for="phoneNumberInput"><h5>Phone Number</h5></label>
+            <input type="number" placeholder="Write your phone number" name="phoneNumber" id="phoneNumberInput" required>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+</body>
+</html>

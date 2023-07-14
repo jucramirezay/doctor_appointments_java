@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div>
+
+    <h1 th:text="${message}"></h1>
+
+    <form action="/newDoctor" method="POST">
+      <div>
+        <label for="firstNameInput"><h5>First Name</h5></label>
+        <input type="text" placeholder="Write your first name" name="firstName" id="firstNameInput" required>
+      </div>
+      <div>
+        <label for="lastNameInput"><h5>Last Name</h5></label>
+        <input type="text" placeholder="Write your last name" name="lastName" id="lastNameInput" required>
+      </div>
+      <div>
+        <label for="specialtySelect"><h5>Specialty Select</h5></label>
+        <select id="specialtySelect" name="specialty" required>
+          <option>Medicina general</option>
+          <option>Cardiologia</option>
+          <option>Medicina interna</option>
+          <option>Dermatologia</option>
+          <option>Rehabilitacion fisica</option>
+          <option>Psicologia</option>
+          <option>Odontologia</option>
+          <option>Radiologia</option>
+        </select>
+      </div>
+      <div>
+        <label for="officeInput"><h5>Office</h5></label>
+        <input type="number" placeholder="Write your office number" name="office" id="officeInput" required>
+      </div>
+      <div>
+        <label for="inputEmail"><h5>Email</h5></label>
+        <input type="email" placeholder="Write your email" id="inputEmail" name="email" required>
+        <div id="emailHelp"></div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+
+  </div>
+</body>
+</html>

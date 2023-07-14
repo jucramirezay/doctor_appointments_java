@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+
+        <h1 th:text="${message}"></h1>
+
+        <form action="/newAppointment" method="POST">
+
+            <div>
+                <label for="idNumber"><h5>Identification Number User</h5></label>
+                <input type="number" placeholder="Write your identification Number" name="idNumber" id="idNumber" required>
+            </div>
+            <div>
+                <label for="specialtySelect"><h5>Specialty Select</h5></label>
+                <select id="specialtySelect" name="specialty" required>
+                    <option>Medicina general</option>
+                    <option>Cardiologia</option>
+                    <option>Medicina interna</option>
+                    <option>Dermatologia</option>
+                    <option>Rehabilitacion fisica</option>
+                    <option>Psicologia</option>
+                    <option>Odontologia</option>
+                    <option>Radiologia</option>
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  <h1>Appointment Web Page</h1>
+  <h4>
+    Users
+  </h4>
+  <table>
+    <tr th:each="user: ${users}">
+      <td th:text="${user.firstName}"></td>
+      <td th:text="${user.lastName}" /></td>
+      <td th:text="${user.idNumber}" /></td>
+      <td th:text="${user.age}" /></td>
+      <td th:text="${user.phoneNumber}" /></td>
+      <td>
+        <form action="/">
+          <input class="input-delete" type="hidden" th:value="${user.id}">
+          <button type="submit" onclick="deleteFunction(type = 'user')">Delete</button>
+        </form>
+      </td>
+    </tr>
+    <a href="/"><button>Return</button></a>
+  </table>
+</div>
+
+<script>
+    // Maneja la eliminación de doctores, usuarios y citas
+const deleteFunction = async (type = '') => {
+    const delete_element = document.querySelector('.input-delete').value;
+    let endPoint = '';
+
+    console.log(delete_element);
+
+    if(type == 'doctor') {
+        endPoint = `/deleteDoctor/${delete_element}`;
+    } else if(type == 'user') {
+        endPoint = `/deleteUser/${delete_element}`;
+    } else if(type == 'appointment') {
+        endPoint = `/deleteAppointment/${delete_element}`;
+    }
+
+    try {
+        const data = await fetch(endPoint, {
+            method: 'delete'
+        });
+
+        const response = await data.json();
+        if (response.status) {
+            setTimeout(() => {
+                window.location.href = '/';
+            }, 2000);
+        } else {
+            console.log("error");
+        }
+
+    } catch (error) {
+      console.log(error);
+    }
+
+}
+
+</script>
+
+</body>
+</html>
